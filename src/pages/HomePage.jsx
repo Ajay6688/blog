@@ -7,16 +7,12 @@ import backButtonIcon from "../assets/images/backButtonIcon.png";
 import { useRef, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
-const TEXT =
-  "Hi Guys!! This article contains a lot of links, but believe me, after reading them you’ll get started with React JS right away. If reading is not what you looking for, add the Natural Reader Text to Speech extension to your chrome and make your life easy. :)";
-
 export const HomePage = () => {
   const [text, setText] = useState("");
   const [addTextClicked, setAddTextClicked] = useState(false);
   const [addImageClicked, setAddImageClicked] = useState(false);
-  // const [contentText, setContentText] = useState(TEXT);
   const [contentList, setContentList] = useState([
-    { content: TEXT, type: "TEXT" },
+    { content: "", type: "TEXT" },
   ]);
   const [showAddContentButtons, setShowAddContentButtons] = useState(true);
   const inputText = useRef();
@@ -37,7 +33,6 @@ export const HomePage = () => {
     setAddTextClicked(false);
     setShowAddContentButtons(true);
     console.log(inputText.current.value);
-    // setContentText((prev)=>prev+"\n"+inputText?.current.value);
     setContentList([
       ...contentList,
       { content: inputText.current.value, type: "TEXT" },
