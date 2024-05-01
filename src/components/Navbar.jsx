@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "../styles/HomePage.css";
 
 export const Navbar = () => {
@@ -36,9 +36,14 @@ export const Navbar = () => {
           >
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
-                  Home <span className="sr-only">(current)</span>
-                </a>
+                <Link className="nav-link" to="/all-blogs">
+                  All Blogs
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link className="nav-link" to="/">
+                  Create
+                </Link>
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
@@ -51,7 +56,14 @@ export const Navbar = () => {
             </form>
           </div>
         </nav>
-        <div style={{display : "flex" , justifyContent:"center" , alignItems : "center" , flexDirection : "column"}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
           <Outlet />
         </div>
       </div>
